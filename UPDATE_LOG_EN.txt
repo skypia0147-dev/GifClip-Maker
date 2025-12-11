@@ -1,0 +1,48 @@
+[ Video To GIF Tool - v2.0 Update Notes ]
+Date: 2025-12-11
+
+This major update completely replaces the underlying engine with PyQt6 to overcome the limitations of the existing Tkinter version, significantly enhancing performance and usability.
+
+--------------------------------------------------------------------------------
+1. Core Changes
+
+■ Engine Replacement (Tkinter → PyQt6)
+ - Introduced QMediaPlayer with GPU acceleration support for smooth high-resolution video preview.
+ - Improved UI responsiveness and resolved the freezing issue when moving the window.
+ - Applied a sleek Dark Theme stylesheet.
+
+■ Smart Estimation
+ - Restored the powerful '2.0-second precision sampling' logic from the legacy version for improved estimation accuracy.
+ - [New] Batch Estimation: Calculates and estimates the size of multiple files in the list at once, providing results in a popup.
+
+■ Conversion Engine Optimization
+ - Optimized FFmpeg + Gifski pipeline (using yuv4mpegpipe).
+ - Added 'Cancel' functionality during conversion.
+ - Enhanced WebP format support.
+
+--------------------------------------------------------------------------------
+2. Usability
+
+■ Persistent Settings
+ - Language settings (Korean/English) and user preferences are automatically saved and maintained after the program closes.
+
+■ Visual Timeline
+ - Visually displays start/end points on the slider when setting ranges.
+ - More intuitive range adjustment via drag-and-drop.
+
+■ Batch Processing
+ - Supports drag-and-drop for multiple files.
+ - Applies individual settings (FPS, Resolution, etc.) per file.
+ - Allows converting or estimating only specific selected files.
+
+--------------------------------------------------------------------------------
+3. Improvements
+
+ - Added a Status Bar for real-time progress monitoring.
+ - Improved auto-detection logic for FPS (using OpenCV).
+ - Built-in support for icons (app_icon.ico) and essential resources (ffmpeg/gifski) (Portable Executable).
+ - Improved UI layout intuitiveness (optimized button placement, improved font readability).
+
+--------------------------------------------------------------------------------
+[ Distribution Files ]
+ - VideoToGifTool.exe (Single executable, all libraries included)
