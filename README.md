@@ -1,80 +1,74 @@
-# Video To GIF Tool
+# Video To GIF Tool (v2.0 - PyQt6 Edition)
 
-A simple GUI tool for converting video files into GIFs.  
-This application is built with Python (tkinter) and uses **ffmpeg** and **gifski** to generate high-quality GIF files.
+A powerful and modern GUI tool for converting video files into high-quality GIFs or WebP animations.  
+This application has been completely rebuilt using **PyQt6** for a modern dark-themed UI and utilizes **FFmpeg** and **Gifski** for superior conversion quality and performance.
 
 ---
 
 ## Features
 
-- Convert videos to GIF format  
-  *(Supports mp4, mkv, avi, mov, webm, wmv)*
-- Real-time video preview using a timeline slider
-- Play and pause video directly inside the application
-- Set **start position** based on the current frame
-- Set **end position** based on the current frame
-- Manually enter clip range using:
-  - Seconds
-  - Time format (`mm:ss`, `hh:mm:ss`)
-- Visual timeline bar showing the selected clip range
-- Adjust GIF quality from **1 to 100** *(powered by gifski)*
-- Set custom output FPS for the GIF
-- Keep original video resolution
-- Select predefined resolution presets:
-  - 1080p
-  - 720p
-  - etc.
-- Set custom resolution using width and height
-- Scale resolution by percentage based on the original size
-- Estimate final GIF file size before converting
-- Open video files using **drag and drop**
-- No command prompt windows shown during conversion
-- Conversion progress displayed via status messages
-- Output GIF is saved in the **same folder as the source video**
+### Core Functionality
+- **High-Quality Conversion**: Uses `gifski` for optimal GIF quality (colors/dithering).
+- **Format Support**: Supports GIF and WebP output.
+- **Batch Processing**:
+  - Add multiple videos to a list.
+  - Apply individual settings (FPS, Resize, Quality) for each video.
+  - Convert selected videos or the entire batch.
+- **Accurate Size Estimation**: Predicts the final file size using a 2.0s sample (restored legacy logic for accuracy).
+- **Persistent Settings**: Language and other preferences are saved automatically.
+
+### Modern UI & Experience
+- **Fluid Preview**: Real-time video playback using `QMediaPlayer` (GPU accelerated).
+- **Visual Timeline**: Drag-and-drop slider to select Start/End points easily.
+- **Drag & Drop**: Drag video files directly into the window to load them.
+- **Dark Theme**: Sleek, professional dark interface built with Qt Stylesheets.
+
+### Detailed Control
+- **Range Selection**:
+  - Set Start/End visually or manually (mm:ss / hh:mm:ss).
+- **Resolution Control**:
+  - Presets (1080p, 720p).
+  - Custom Dimensions (W x H).
+  - Scale by Percentage (50%, 25%, etc.).
+- **Frame Rate (FPS)**: Auto-detected from source or custom value.
+- **Quality**: Adjustable quality slider (1-100).
+- **Localization**: Supports **English** and **Korean (한국어)**.
 
 ---
 
 ## How To Use
 
-1. Extract all files from the archive to the same folder  
-2. Launch the application executable  
-3. Click **Open Video** or drag and drop a video file into the window  
-4. Preview the video using the timeline slider  
-5. Set start and end positions if needed  
-6. Adjust quality, FPS, and resolution settings  
-7. *(Optional)* Click **Estimate Size** to preview output file size  
-8. Click **Convert to GIF**  
-9. The GIF file will be created next to the original video  
+1. **Launch**: Run `VideoToGifTool.exe`.
+2. **Add Videos**: Drag & drop files or click **Open Video**.
+3. **Select Range**: Use the timeline slider or "Set Start/End" buttons to trim the video.
+4. **Configure**: Adjust FPS, Resize, and Quality settings on the right panel.
+5. **Estimate (Optional)**: Select files in the list and click **Estimate Size** to check expected output size.
+6. **Convert**: Click **Convert** to start processing.
+   - The result is saved in the same folder as the source video.
 
 ---
 
-## Included Files
+## Technical Details
 
-- Video To GIF Tool executable  
-- `ffmpeg.exe` *(official build)*  
-- `gifski.exe` *(official build)*  
+- **Framework**: Python 3 + PyQt6
+- **Engine**: 
+  - `ffmpeg.exe` (Video processing, piping, WebP encoding)
+  - `gifski.exe` (High-quality GIF encoding)
+- **Architecture**:
+  - Multi-threaded conversion and estimation (GUI remains responsive).
+  - Native Windows taskbar progress integration.
 
 ---
 
 ## Requirements
 
-- Windows operating system  
-- No additional installation required  
-- `ffmpeg` and `gifski` are already included with the tool  
-
----
-
-## Notes
-
-- `ffmpeg.exe` and `gifski.exe` must remain in the same folder as the program
-- Output resolution is automatically adjusted to **even numbers** for compatibility
-- Very short clips may produce less accurate size estimates
-- Conversion runs in the background to keep the UI responsive
+- **Windows 10/11** (64-bit recommended)
+- No external installation required (Portable Build).
+- `ffmpeg.exe` and `gifski.exe` are bundled internally.
 
 ---
 
 ## License
 
-- This tool is provided **free of charge**
-- `ffmpeg` and `gifski` are included as **unmodified official binaries**
-- `ffmpeg` and `gifski` are distributed under their respective licenses
+- This tool is provided free of charge.
+- FFmpeg and Gifski are distributed under their respective licenses.
